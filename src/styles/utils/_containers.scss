@@ -1,0 +1,107 @@
+@use "styles/variables/mediaQuerySizes" as mediaQuerySizes;
+
+@mixin centerHorizontal() {
+  left: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  transform: translate(-50%, 0);
+}
+
+@mixin centerVertical() {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+@mixin center {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin setWidth($width) {
+  max-width: $width;
+  min-width: $width;
+  width: $width;
+}
+
+@mixin setHeight($height) {
+  height: $height;
+  max-height: $height;
+  min-height: $height;
+}
+
+@mixin setSize($size) {
+  @include setWidth($size);
+  @include setHeight($size);
+}
+
+@mixin fullContainerWidth {
+  @include setWidth(100%);
+}
+
+@mixin fullContainerHeight {
+  @include setHeight(100%);
+}
+
+@mixin fullContainerSize {
+  left: 0;
+  top: 0;
+  @include fullContainerWidth;
+  @include fullContainerHeight;
+}
+
+@mixin fullViewportWidth {
+  overflow-x: hidden;
+  @include setWidth(100vw);
+}
+
+@mixin fullViewportHeight {
+  overflow-y: hidden;
+  @include setHeight(100vh);
+}
+
+@mixin fullViewportSize {
+  left: 0;
+  top: 0;
+  @include fullViewportWidth;
+  @include fullViewportHeight;
+}
+
+@mixin responsiveContainer {
+  margin-left: 24px;
+  margin-right: 24px;
+  @include setWidth(calc(100% - 48px));
+
+  @media #{mediaQuerySizes.$small} {
+    margin-left: auto;
+    margin-right: auto;
+    @include setWidth(540px);
+  }
+
+  @media #{mediaQuerySizes.$medium} {
+    margin-left: auto;
+    margin-right: auto;
+    @include setWidth(720px);
+  }
+
+  @media #{mediaQuerySizes.$large} {
+    margin-left: auto;
+    margin-right: auto;
+    @include setWidth(960px);
+  }
+
+  @media #{mediaQuerySizes.$x-large} {
+    margin-left: auto;
+    margin-right: auto;
+    @include setWidth(1140px);
+  }
+
+  @media #{mediaQuerySizes.$xx-large} {
+    margin-left: auto;
+    margin-right: auto;
+    @include setWidth(1320px);
+  }
+}

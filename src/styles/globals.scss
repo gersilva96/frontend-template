@@ -1,0 +1,18 @@
+@use "styles/utils/containers" as containers;
+@use "styles/variables/colors" as colors;
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  background: colors.$lightGray;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

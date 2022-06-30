@@ -1,0 +1,7 @@
+@import "styles/utils/layout/flex";
+
+.container {
+  @include flexColumnMixin($gap: 8px);
+  max-width: 500px;
+  padding: 32px;
+}

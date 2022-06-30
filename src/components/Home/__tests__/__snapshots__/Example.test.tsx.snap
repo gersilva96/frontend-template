@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Example component should match with the snapshot 1`] = `
+<div>
+  <div
+    class=""
+  >
+    <label>
+      Ingresar algo
+    </label>
+    <input
+      id="something"
+      placeholder="Ej. programación"
+      value=""
+    />
+    <button>
+      Setear
+    </button>
+    <p>
+      El valor de "something" es: 
+    </p>
+  </div>
+</div>
+`;

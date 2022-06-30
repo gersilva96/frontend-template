@@ -1,0 +1,16 @@
+@import "styles/variables/colors";
+@import "styles/utils/layout/flex";
+
+.page {
+  @include flexColumnMixin($justifyContent: center);
+  min-height: 100vh;
+
+  .main {
+    @include flexItemMixin($grow: 1, $shrink: 0, $basis: auto);
+    background-color: $lightGray;
+  }
+
+  .footer {
+    @include flexItemMixin($shrink: 0);
+  }
+}
